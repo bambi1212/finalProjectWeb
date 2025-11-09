@@ -150,8 +150,11 @@ html, body {
 
 /* === Status indicators === */
 .status-dot {
-  width: 10px; height: 10px; border-radius: 50%;
-  display: inline-block; vertical-align: middle;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  display: inline-block;
+  vertical-align: middle;
   box-shadow: 0 0 8px rgba(0,0,0,.6), 0 0 6px rgba(46,234,123,.25) inset;
   border: 1px solid #0a0a0a;
 }
@@ -159,11 +162,62 @@ html, body {
 .status-warn { background: #e0a800; }
 .status-danger { background: #ff4d4d; }
 
+.camera-status-text {
+  font-size: 1.05rem;
+  font-weight: 600;
+  letter-spacing: .02em;
+  color: #f5fff8;
+  text-shadow: 0 0 6px rgba(46,234,123,.35);
+}
+
+.status-panel .status-label {
+  font-size: 1.05rem;
+  letter-spacing: .015em;
+  text-transform: none;
+  font-weight: 600;
+  color: #effff4;
+  text-shadow: 0 0 6px rgba(46,234,123,.25);
+}
+.status-panel .status-value {
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: #d8ffe8;
+  display: flex;
+  align-items: center;
+  gap: .35rem;
+}
+.status-panel .status-value span:last-child {
+  color: #f7fff9;
+}
+.status-panel .status-grid-label {
+  font-size: .98rem;
+  letter-spacing: .01em;
+  text-transform: none;
+  font-weight: 600;
+  color: rgba(238,255,244,.9);
+}
+.status-panel .status-grid-value {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #f7fff9;
+  text-shadow: 0 0 6px rgba(46,234,123,.25);
+}
+.status-panel .status-emphasis {
+  color: #abffd2;
+  font-weight: 700;
+  text-shadow: 0 0 10px rgba(46,234,123,.35);
+}
+.status-panel #modeVal {
+  font-size: 1.15rem;
+  font-weight: 700;
+}
+
 /* === Progress bars === */
 .progress-hud {
   background: #0d1519;
   border: 1px solid #183424;
-  height: .75rem;
+  height: 1rem;
+  box-shadow: inset 0 0 12px rgba(46,234,123,.15);
 }
 
 /* === Console viewport === */
@@ -172,6 +226,16 @@ html, body {
   max-height: 220px;
   overflow: auto;
   font-variant-numeric: tabular-nums;
+  color: #e4f9ed;
+}
+.console .text-muted,
+.form-card .text-muted,
+.manual-panel .text-muted {
+  color: rgba(228,249,237,.85) !important;
+}
+
+.status-panel .status-grid {
+  row-gap: 0.65rem;
 }
 
 /* === Table look and feel === */
@@ -190,3 +254,46 @@ footer { border-top: 1px solid #143825; }
 
 /* === Misc utility overrides === */
 hr { border-color: #183424; }
+.accordion.card-hud {
+  background: #050708;
+  border: 1px solid #183424;
+  border-radius: .5rem;
+}
+.accordion-item.card-hud {
+  background: #050708;
+  border: none;
+}
+.accordion-button {
+  background-color: #050708;
+  color: var(--text);
+  font-weight: 600;
+}
+.accordion-button.collapsed {
+  color: rgba(238,255,244,.9);
+}
+.accordion-button:focus {
+  box-shadow: 0 0 0 .25rem rgba(46,234,123,.2);
+}
+.accordion-button:not(.collapsed) {
+  background-color: #0b1216;
+  color: var(--hud-green);
+  box-shadow: inset 0 -1px 0 #183424;
+}
+.accordion-body {
+  background-color: #050708;
+  color: rgba(230,245,236,.9);
+  border-top: 1px solid #183424;
+  line-height: 1.6;
+}
+.form-card .status-label,
+.form-card .status-grid-label {
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: #effff4;
+  letter-spacing: .015em;
+}
+.form-card .status-grid-value {
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: #f7fff9;
+}
